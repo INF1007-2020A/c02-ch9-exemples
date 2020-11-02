@@ -4,8 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>ef2822ae-f944-4c2b-9e64-2ddb9e3742c7</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>
-    </StartupFile>
+    <StartupFile>logging_ex.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,6 +22,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="logging_ex.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="_exercice_version_prof.py" />
   </ItemGroup>
   <ItemGroup>
