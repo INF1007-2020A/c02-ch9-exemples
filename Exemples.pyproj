@@ -4,13 +4,13 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>ef2822ae-f944-4c2b-9e64-2ddb9e3742c7</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>exceptions_ex.py</StartupFile>
+    <StartupFile>tests_ex.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>Exercices</Name>
-    <RootNamespace>Exercices</RootNamespace>
+    <Name>Exemples</Name>
+    <RootNamespace>Exemples</RootNamespace>
     <SuppressConfigureTestFrameworkPrompt>true</SuppressConfigureTestFrameworkPrompt>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -26,6 +26,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="logging_ex.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tests_ex.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="_exercice_version_prof.py" />
