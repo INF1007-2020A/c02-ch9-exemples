@@ -22,6 +22,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="code_to_test.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="exceptions_ex.py">
       <SubType>Code</SubType>
     </Compile>
@@ -31,7 +34,6 @@
     <Compile Include="tests_ex.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="_exercice_version_prof.py" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
