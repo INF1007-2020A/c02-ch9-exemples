@@ -5,6 +5,14 @@ from collections import deque
 
 
 def is_prime(num):
+	"""
+	Retourne si un nombre est premier.
+
+	:param num: Le nombre à tester.
+
+	:returns: :code:`True` si premier, :code:`False` sinon
+	"""
+
 	for i in range(2, int(round(sqrt(num))) + 1):
 		if num % i == 0:
 			return False
