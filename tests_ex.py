@@ -47,7 +47,6 @@ class MyTests(unittest.TestCase):
 			expected
 		)
 
-
 	def test_fibonacci_numbers_invalid_lengths(self):
 		values = [
 			"henlo",
@@ -63,7 +62,6 @@ class MyTests(unittest.TestCase):
 		for v, e in zip(values, expected_except):
 			with self.assertRaises(e):
 				fibo_series = [fibo for fibo in fibonacci_numbers(v)]
-
 
 	def test_build_recursive_sequence_generator(self):
 		def fibo_def(last_elems):
