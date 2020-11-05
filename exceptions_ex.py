@@ -14,6 +14,13 @@ def prime_factors(num):
 		if is_prime(i) and num % i == 0:
 			yield i
 
+def read_int_from_stdin():
+	input_line = input("Entrez un nombre entier positif supérieur à 3 : ")
+	num = int(input_line)
+	if num <= 3:
+		raise ValueError()
+	return num, input_line
+
 
 def main():
 	logging.basicConfig(
@@ -24,10 +31,7 @@ def main():
 	)
 	while True:
 		try:
-			input_line = input("Entrez un nombre entier positif supérieur à 3 : ")
-			num = int(input_line)
-			if num <= 3:
-				raise ValueError()
+			num, input_line = read_int_from_stdin()
 		except ValueError:
 			print("Le nombre entré n'est pas un entier > 3. bruh.")
 		except KeyboardInterrupt:

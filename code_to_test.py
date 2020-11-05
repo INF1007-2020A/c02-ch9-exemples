@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 from collections import deque
+from typing import Iterator
+import argparse
 
 
 def is_prime(num):
@@ -18,12 +20,29 @@ def is_prime(num):
 			return False
 	return True
 
-def prime_factors(num):
+def prime_factors(num) -> Iterator[int]:
+	"""
+	Génère les facteurs premiers d'un nombre.
+
+	:param num: Le nombre à factoriser.
+	"""
+
 	for i in range(2, int(num / 2) + 1):
 		if is_prime(i) and num % i == 0:
 			yield i
 
-def fibonacci_numbers(length):
+def fibonacci_numbers(length) -> Iterator[int]:
+	"""
+	Génère les nombres de Fibonacci jusqu'à un index donné.
+
+	:param length: Longueur de la suite à générer.
+	"""
+
+	if not isinstance(length, int):
+		raise TypeError()
+	if length < 0:
+		raise ValueError()
+
 	INIT_VALUES = [0, 1]
 	for i, elem in enumerate(INIT_VALUES):
 		if i >= length:
@@ -51,8 +70,32 @@ def build_recursive_sequence_generator(initial_values, recursive_def, keep_whole
 			yield fibo_number
 	return recursive_generator
 
+def setup_args():
+	parser = argparse.ArgumentParser(description='Affiche les exemples du chapitre 9.')
+
+	parser.add_argument(
+		'--arg1',
+		type=int,
+		help="C'est un paramètre qui sera affiché"
+	)
+	parser.add_argument(
+		"--mon-autre-arg",
+		type=str,
+		dest="mon_autre_arg",
+		help="Une autre affaire."
+	)
+
+	return parser.parse_args()
+
 
 if __name__ == "__main__":
+	args = setup_args()
+
+	print("--- Command-line arg ---")
+	arg = None
+	print("Argument 1 : ", args.arg1)
+	print("Argument 2 : ", args.mon_autre_arg)
+
 	print("--- Generators ---")
 	for fibo_num in fibonacci_numbers(1):
 		print(fibo_num, end=" ")
